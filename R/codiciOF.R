@@ -7,8 +7,9 @@ source(here('R', 'librerie.R'))
 library(janitor)
 
 library(readxl)
-titanic <- read_excel("~/R/CORSO_R_IZSLER_2023_Tranquillo/titanic.xlsx")
+titanic <- read_excel("C:\\Users\\massa\\OneDrive\\Documenti\\R\\0_CORSO_R_IZSLER_2023_Tranquillo\\titanic.xlsx")
 View(titanic)
+str(titanic)
 
 
 head(titanic)
@@ -185,16 +186,21 @@ names(who)
 #  DATASET COVID
 #
 ################################################################################
-
-df<-read_csv("C:\\Users\\massa\\Documents\\R\\CORSO_R_IZSLER_2023_Tranquillo\\Dati_covid_IZSLER\\data-2023-05-30.csv")
+library()
+df<-read.csv("C:\\Users\\massa\\Documents\\R\\CORSO_R_IZSLER_2023_Tranquillo\\Dati_covid_IZSLER\\data-2023-05-30.csv", 
+             header=T)
 df
 
-names(df)
-glimpse(df)
+# oppure per imporatre
 
+library(readr)
+data_2023_05_30 <- read_csv("~/R/CORSO_R_IZSLER_2023_Tranquillo/Dati_covid_IZSLER/data-2023-05-30.csv")
+View(data_2023_05_30)
+
+names(df)
+glimpse(df) # che equivale a fare str(df)
 summary(df)
 unique(factor(df$Materiale))
 table (df$Materiale)
-
 
 unique(factor(df$Reparto))
